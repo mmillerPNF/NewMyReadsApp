@@ -2,7 +2,6 @@ import React from 'react'
 import Book from './Book';
 
 const Bookshelf = props => {
-    // look for this property name inside of the props object
     const { books, onUpdateShelf } = props;
     console.log(books);
     return (
@@ -14,7 +13,7 @@ const Bookshelf = props => {
                             if (b.title) {
                                 return (
                                     <div className='book' key={index}>
-                                        <Book book={b} onUpdateShelf={onUpdateShelf}/>
+                                        <Book book={b} onUpdateShelf={onUpdateShelf} shelf={b.shelf}/>
                                     </div>
                                 )
                             } else {

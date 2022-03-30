@@ -15,8 +15,16 @@ class SearchPage extends Component {
   };
 
   render() {
-    const { searchBooks, onResetSearch, onUpdateShelf } = this.props;
-    console.log(searchBooks);
+    const { books, searchBooks, onResetSearch, onUpdateShelf } = this.props;
+    const updatedSearchBooks = searchBooks.map(bk => {
+      books.map(b => {
+        if(b.id === bk.id) {
+          bk.shelf = b.shelf;
+        }
+        return b;
+      });
+      return bk;
+    })
     return (
       <div className="search-books">
         <div className="search-books-bar">
@@ -43,8 +51,8 @@ class SearchPage extends Component {
         </div>
         <div className="search-books-results">
           <ol className="books-grid">
-            {this.props.searchBooks.map(b => (
-              <Book key={b.id} book={b} onUpdateShelf={onUpdateShelf} />
+            {updatedSearchBooks.map(b => (
+              <Book key={b.id} book={b} shelf={b.shelf ? b.shelf : 'none'} onUpdateShelf={onUpdateShelf} />
             ))}
           </ol>
         </div>
