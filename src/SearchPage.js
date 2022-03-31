@@ -43,6 +43,7 @@ class SearchPage extends Component {
                   you don't find a specific author or title. Every search is limited by search terms.
                 */}
             <input
+              value={this.state.inputValue}
               type="text"
               placeholder="Search by title or author"
               onChange={this.handleChange}
