@@ -17,4 +17,5 @@ To launch the app on the local host just run the following command
 
 Your browser should open up http://localhost:3000 and have the app running there by default
 
-==The search results are limited to specific keywords which can be found here:== https://github.com/mmillerPNF/NewMyReadsApp/blob/MyReadsApp/SEARCH_TERMS.md 
+### Important Note
+[The search results are limited to specific keywords which can be found here](https://github.com/mmillerPNF/NewMyReadsApp/blob/MyReadsApp/SEARCH_TERMS.md)
