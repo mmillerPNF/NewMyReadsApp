@@ -46,6 +46,8 @@ class BooksApp extends React.Component {
           this.setState({ searchBooks: books })
         }
       });
+    } else {
+      this.setState({ searchBooks: [] });
     }
     BooksAPI.getAll().then(b => {
       console.log(b);
@@ -53,6 +55,12 @@ class BooksApp extends React.Component {
         books: b
       });
     });
+  }
+
+  resetSearch = () => {
+    this.setState({
+     searchBooks: []
+    })
   }
 
   render() {
